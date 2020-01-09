@@ -24,7 +24,7 @@ Builds the app for production to the `build` folder.
 
 User list
 
-![Alt text](/docs/uselist.png?raw=true "User list")
+![Alt text](/docs/userlist.png "User list")
 
 ## Folder structure
 
