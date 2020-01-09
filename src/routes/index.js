@@ -7,6 +7,9 @@ import UserList from "../containers/UserList";
 //import constants
 import { configuration, Path } from "../constants";
 
+/**
+ * Main routes
+ */
 function Routes() {
   const { APP_URL } = configuration;
   return (

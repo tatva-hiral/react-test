@@ -17,6 +17,9 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+/**
+ * Main app route
+ */
 function App() {
   const classes = useStyles();
   return (

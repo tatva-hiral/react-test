@@ -10,10 +10,14 @@ import "./navbar.css";
 import { history } from "../../utils/history";
 import { Path } from "../../constants";
 
+/**
+ * Navbar component(header menu)
+ * It is a common navbar menu, you can add more routes
+ */
 function Navbar() {
   return (
     <div>
-      <AppBar position="static" className="wrapper">
+      <AppBar position="fixed" className="wrapper">
         <Grid container>
           <Grid item xs={12}>
             <Toolbar>

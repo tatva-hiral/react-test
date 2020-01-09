@@ -8,30 +8,49 @@ import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 import LastPageIcon from "@material-ui/icons/LastPage";
 import PropTypes from "prop-types";
 
-const useStyles1 = makeStyles(theme => ({
+const useStyles = makeStyles(theme => ({
   root: {
     flexShrink: 0,
     marginLeft: theme.spacing(2.5)
   }
 }));
 
+/**
+ * Paginator component
+ */
 function Paginator(props) {
-  const classes = useStyles1();
+  const classes = useStyles();
   const theme = useTheme();
   const { count, page, rowsPerPage, onChangePage } = props;
 
+  /**
+   * Used for first page button click, call parent component function onChangePage
+   * @param {*} event
+   */
   const handleFirstPageButtonClick = event => {
     onChangePage(event, 0);
   };
 
+  /**
+   * Used for back button click, call parent component function onChangePage
+   * @param {*} event
+   */
   const handleBackButtonClick = event => {
     onChangePage(event, page - 1);
   };
 
+  /**
+   * Used for next button click, call parent component function onChangePage
+   * @param {*} event
+   */
   const handleNextButtonClick = event => {
     onChangePage(event, page + 1);
   };
 
+  /**
+   * Used for last button click, call parent component function onChangePage
+   * @param {*} event
+   */
   const handleLastPageButtonClick = event => {
     onChangePage(event, Math.max(0, Math.ceil(count / rowsPerPage) - 1));
   };
@@ -78,6 +97,9 @@ function Paginator(props) {
   );
 }
 
+/**
+ * Initialize proptypes check
+ */
 Paginator.propTypes = {
   count: PropTypes.number.isRequired,
   onChangePage: PropTypes.func.isRequired,

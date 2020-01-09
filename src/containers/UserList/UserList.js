@@ -23,6 +23,7 @@ import * as UserActions from "../../actions/user";
 //import constants, styles
 import { endpoint } from "../../constants";
 import { useStyles } from "./styles";
+import { PREVIEW } from "../../assets/images";
 
 const StyledTableCell = withStyles(theme => ({
   root: {
@@ -45,6 +46,9 @@ const StyledTableRow = withStyles(theme => ({
   }
 }))(TableRow);
 
+/**
+ * Userlist function component to display userlist
+ */
 function UserList() {
   const classes = useStyles();
   const dispatch = useDispatch();
@@ -53,16 +57,27 @@ function UserList() {
   const [isLoading, setLoading] = useState(false);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
-
+  /**
+   * On change pagination, update state - page
+   * @param {*} event
+   * @param {*} newPage
+   */
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
 
+  /**
+   * Update state - rowsPerPage
+   * @param {*} event
+   */
   const handleChangeRowsPerPage = event => {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
 
+  /**
+   * This is a function to fetch userlist and dispatch redux setUserList function to set props
+   */
   const getUserListData = () => {
     return async dispatch => {
       try {
@@ -78,6 +93,9 @@ function UserList() {
     };
   };
 
+  /**
+   * It is a hooks life cycle method currently used for fetch userlist
+   */
   useEffect(() => {
     dispatch(getUserListData());
   }, []);
@@ -114,7 +132,7 @@ function UserList() {
                   const city = (user.location && user.location.city) || "";
                   const state = (user.location && user.location.state) || "";
                   const picture =
-                    (user.picture && user.picture.thumbnail) || "";
+                    (user.picture && user.picture.thumbnail) || PREVIEW;
                   return (
                     <StyledTableRow key={Math.random()}>
                       <StyledTableCell align="left">

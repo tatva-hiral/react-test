@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export const useStyles = makeStyles(theme => ({
   tableContainer: {
-    marginTop: 30
+    marginTop: 100
   },
   table: {
     minWidth: 650

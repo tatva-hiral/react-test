@@ -6,6 +6,11 @@ const initialState = {
   userList: []
 };
 
+/**
+ * User reducer create to update state
+ * @param {*} state
+ * @param {*} action
+ */
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case userActionsType.SET_USER_LIST:
