@@ -1,6 +1,6 @@
 ## React Test App
 
-This is the test application to show the user listing. This applicatin is built with React Hooks, Material UI and Redux.
+This is the test application to show the user listing. This applicatin is built with React Hooks, Material UI and Redux. We used create-react-app to begin with this test application which by default includes support to ES6. Generally, we used eslint configuration in react development.
 
 ## Quickstart
 
